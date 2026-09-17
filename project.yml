@@ -1,15 +1,11 @@
-name: HuuHungSAMP
-options:
-  deploymentTarget:
-    iOS: "15.0"
 targets:
   HuuHungSAMP:
     type: application
     platform: iOS
-    sources:
-      - HuuHungSAMP
+    deploymentTarget: "14.0" # Hoặc phiên bản iOS tương ứng của bạn
+    sources: [HuuHungSAMP]
     settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.huuhung.samp
-      SWIFT_OBJC_BRIDGING_HEADER: HuuHungSAMP/App/HuuHungSAMP-Bridging-Header.h
-      CLANG_CXX_LANGUAGE_STANDARD: c++17
-      DEVELOPMENT_TEAM: ""
+      CODE_SIGN_STYLE: Automatic
+      DEVELOPMENT_TEAM: "YOUR_TEAM_ID" # Thay mã Team ID của Apple Developer account vào đây (hoặc để trống nếu test local và dùng Xcode tự chọn)
+      CODE_SIGN_IDENTITY: "Apple Development"
+
