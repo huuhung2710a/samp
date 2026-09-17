@@ -1,0 +1,15 @@
+name: HuuHungSAMP
+options:
+  deploymentTarget:
+    iOS: "15.0"
+targets:
+  HuuHungSAMP:
+    type: application
+    platform: iOS
+    sources:
+      - HuuHungSAMP
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.huuhung.samp
+      SWIFT_OBJC_BRIDGING_HEADER: HuuHungSAMP/App/HuuHungSAMP-Bridging-Header.h
+      CLANG_CXX_LANGUAGE_STANDARD: c++17
+      DEVELOPMENT_TEAM: ""

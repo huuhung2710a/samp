@@ -1,0 +1,16 @@
+name: HuuHungSAMP iOS
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check Xcode
+        run: xcodebuild -version
+      - name: Generate project
+        run: |
+          if command -v xcodegen >/dev/null 2>&1; then xcodegen generate; else echo 'Install xcodegen or commit generated HuuHungSAMP.xcodeproj'; fi
+      - name: Build unsigned
+        run: |
+          xcodebuild -project HuuHungSAMP.xcodeproj -scheme HuuHungSAMP -configuration Release -sdk iphoneos CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO build
