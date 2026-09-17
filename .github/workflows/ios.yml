@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-14
+    runs-on: macos-15
 
     steps:
       - uses: actions/checkout@v4
@@ -26,6 +26,7 @@ jobs:
             -scheme HuuHungSAMP \
             -configuration Release \
             -sdk iphoneos \
+            -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \
             build
@@ -34,7 +35,7 @@ jobs:
         run: |
           rm -rf Payload HuuHungSAMP.ipa
           mkdir Payload
-          cp -R build/Release-iphoneos/HuuHungSAMP.app Payload/
+          cp -R build/Build/Products/Release-iphoneos/HuuHungSAMP.app Payload/
           zip -qry HuuHungSAMP.ipa Payload
 
       - name: Upload IPA
