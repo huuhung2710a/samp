@@ -2,10 +2,15 @@ targets:
   HuuHungSAMP:
     type: application
     platform: iOS
-    deploymentTarget: "14.0" # Hoặc phiên bản iOS tương ứng của bạn
+    deploymentTarget: "14.0"
     sources: [HuuHungSAMP]
     settings:
       CODE_SIGN_STYLE: Automatic
-      DEVELOPMENT_TEAM: "YOUR_TEAM_ID" # Thay mã Team ID của Apple Developer account vào đây (hoặc để trống nếu test local và dùng Xcode tự chọn)
+      DEVELOPMENT_TEAM: "YOUR_TEAM_ID" # Nhớ thay Team ID của ông vào đây (hoặc xóa dòng này nếu chỉ test máy ảo local)
       CODE_SIGN_IDENTITY: "Apple Development"
+      
+      # Bổ sung thêm các thiết lập C++ bắt buộc cho RakNet và Core:
+      CLANG_CXX_LANGUAGE_STANDARD: "c++17"
+      CLANG_CXX_LIBRARY: "libc++"
+      OTHER_CPLUSPLUSFLAGS: "$(inherited) -ObjC -Wno-trigraphs"
 
