@@ -1,16 +1,15 @@
+name: HuuHungSAMP
+options:
+  deploymentTarget:
+    iOS: "14.0"
 targets:
   HuuHungSAMP:
     type: application
     platform: iOS
-    deploymentTarget: "14.0"
     sources: [HuuHungSAMP]
     settings:
       CODE_SIGN_STYLE: Automatic
-      DEVELOPMENT_TEAM: "YOUR_TEAM_ID" # Nhớ thay Team ID của ông vào đây (hoặc xóa dòng này nếu chỉ test máy ảo local)
-      CODE_SIGN_IDENTITY: "Apple Development"
-      
-      # Bổ sung thêm các thiết lập C++ bắt buộc cho RakNet và Core:
+      CODE_SIGNING_ALLOWED: NO
       CLANG_CXX_LANGUAGE_STANDARD: "c++17"
       CLANG_CXX_LIBRARY: "libc++"
       OTHER_CPLUSPLUSFLAGS: "$(inherited) -ObjC -Wno-trigraphs"
-
